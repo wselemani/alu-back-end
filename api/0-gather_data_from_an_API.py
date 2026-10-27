@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """Gather an employee's TODO list from an API."""
 
