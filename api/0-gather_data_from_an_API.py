@@ -2,13 +2,16 @@
 #!/usr/bin/python3
 """Gather an employee's TODO list from an API."""
 
-import requests
 import sys
+
+import requests
+
 
 BASE_URL = "https://jsonplaceholder.typicode.com"
 
+
 def main():
-    """print an employee's completed tasks."""
+    """Print an employee's completed tasks."""
     employee_id = sys.argv[1]
 
     user_url = "{}/users/{}".format(BASE_URL, employee_id)
@@ -30,18 +33,17 @@ def main():
         if todo.get("completed")
     ]
 
-
     total_tasks = len(employee_todos)
     number_completed = len(completed_tasks)
 
     print(
-       "Employee {} is done with tasks({}/{}):".format(
+        "Employee {} is done with tasks({}/{}):".format(
             employee_name, number_completed, total_tasks
+        )
     )
-    )
-    for task in completed_tasks:
-         print("\t {}".format(task.get("title")))
 
+    for task in completed_tasks:
+        print("\t {}".format(task.get("title")))
 
 
 if __name__ == "__main__":
