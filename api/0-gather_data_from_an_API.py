@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Gather an employee's TODO list from an API."""
 
-import sys
-
 import requests
+
+import sys
 
 
 BASE_URL = "https://jsonplaceholder.typicode.com"
